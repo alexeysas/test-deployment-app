@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Test.App.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    [Migration("20210419143535_initial")]
+    [Migration("20210419152536_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,7 +38,7 @@ namespace Test.App.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Employee");
+                    b.ToTable("employee");
                 });
 #pragma warning restore 612, 618
         }

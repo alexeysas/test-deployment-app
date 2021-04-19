@@ -36,7 +36,7 @@ namespace Test.App.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Employee");
+                    b.ToTable("employee");
                 });
 #pragma warning restore 612, 618
         }

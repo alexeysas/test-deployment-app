@@ -28,7 +28,7 @@ namespace Cv.Broker.Core.Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Employee>().ToTable("Employee");
+            modelBuilder.Entity<Employee>().ToTable("employee");
         }
 
         public async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default)
