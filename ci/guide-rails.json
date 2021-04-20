@@ -1,0 +1,61 @@
+{
+	"metadata": {
+		"version": 1
+	},
+	"application": {
+		"name": "alexey-test-app",
+		"language": "LANGUAGE_UNDEFINED",
+		"artifact_store": {
+			"repositories": null
+		}
+	},
+	"pipeline": {
+		"segments": [
+			{
+				"name": "Build",
+				"segment_type": "build",
+				"publish_attributes": {
+					"publish": true,
+					"docker_attributes": {
+						"repository": "((application.name))",
+						"tags": [
+							"((application.version))"
+						],
+						"path": ""
+					}
+				},
+				"exit_actions": {},
+				"deployment_strategy": {},
+				"application_init": {},
+				"instance_tags": [
+					{
+						"name": "application.name",
+						"value": "((application.name))"
+					}
+				],
+				"source_code_available": true,
+				"tasks": [
+					{
+						"name": "alexey-test-app",
+						"docker_options": {}
+					}
+				]
+			}
+		],
+		"exit_actions": {},
+		"default_properties": null,
+		"deployment_files": [],
+		"application_init": {
+			"command": "bin/start-service.sh"
+		},
+		"releases": [
+			{
+				"name": "consul",
+				"version": "latest"
+			}
+		]
+	},
+	"organization": {
+		"orgname": "GR-Product"
+	}
+}
