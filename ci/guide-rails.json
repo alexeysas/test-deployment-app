@@ -37,7 +37,9 @@
 				"tasks": [
 					{
 						"name": "alexey-test-app",
-						"docker_options": {}
+						"docker_options": {
+							"repository": "alpine"
+						}
 					}
 				]
 			}
