@@ -37,6 +37,7 @@
 				"tasks": [
 					{
 						"name": "alexey-test-app",
+						"docker_registry_alias_id": "81e5f42e-c451-41ad-62c0-b2f861b3a72f",
 						"docker_options": {
 							"repository": "alpine"
 						}
