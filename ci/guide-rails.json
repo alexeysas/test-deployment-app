@@ -77,7 +77,7 @@
 					{
 						"name": "check",
 						"definition": "check",
-						"command": "#!/bin/bash\n\ndload_dir=app/publish\n\nif [ ! -d \"$dload_dir\" ]; then\n  echo \"$dload_dir does not exist\"\n  exit 1\nelse\n  echo \"$dload_dir exists\"\nfi",
+						"command": "#!/bin/bash\n\ndload_dir=/app/publish\n\nif [ ! -d \"$dload_dir\" ]; then\n  echo \"$dload_dir does not exist\"\n  exit 1\nelse\n  echo \"$dload_dir exists\"\nfi",
 						"properties": null
 					}
 				],
@@ -128,13 +128,7 @@
 		"deployment_files": [],
 		"application_init": {
 			"command": "bin/start-service.sh"
-		},
-		"releases": [
-			{
-				"name": "consul",
-				"version": "latest"
-			}
-		]
+		}
 	},
 	"organization": {
 		"orgname": "GR-Product"
