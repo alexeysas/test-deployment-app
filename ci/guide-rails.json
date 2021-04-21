@@ -19,7 +19,8 @@
 					"docker_attributes": {
 						"repository": "((application.name))",
 						"tags": [
-							"((application.version))"
+							"((application.version))",
+							"latest"
 						],
 						"path": ""
 					}
@@ -79,7 +80,13 @@
 		"deployment_files": [],
 		"application_init": {
 			"command": "bin/start-service.sh"
-		}
+		},
+		"releases": [
+			{
+				"name": "consul",
+				"version": "latest"
+			}
+		]
 	},
 	"organization": {
 		"orgname": "GR-Product"
