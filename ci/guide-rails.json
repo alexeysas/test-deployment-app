@@ -22,7 +22,7 @@
 							"((application.version))",
 							"latest"
 						],
-						"path": ".",
+						"path": "",
 						"build_args": {
 							"-f": "Test.App\\Dockerfile"
 						}
