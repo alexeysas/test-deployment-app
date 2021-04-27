@@ -19,9 +19,13 @@
 					"docker_attributes": {
 						"repository": "((application.name))",
 						"tags": [
-							"((application.version))"
+							"((application.version))",
+							"latest"
 						],
-						"path": "Test.App"
+						"path": "",
+						"build_args": {
+							"-f": "Test.App\\Dockerfile"
+						}
 					}
 				},
 				"exit_actions": {},
@@ -33,6 +37,20 @@
 						"value": "((application.name))"
 					}
 				],
+				"post_deployment_actions": {
+					"instances": null,
+					"loadbalanced": false,
+					"loadbalancer": {
+						"TargetGroupName": "",
+						"TargetGroupPort": 0,
+						"TargetGroupProtocol": "",
+						"TargetType": "",
+						"VPCID": "",
+						"HealthCheckEnabled": false,
+						"HealthCheckPort": "",
+						"UnhealthyThresholdCount": 0
+					}
+				},
 				"source_code_available": true,
 				"tasks": [
 					{
@@ -51,6 +69,54 @@
 						}
 					}
 				]
+			},
+			{
+				"name": "Isolation",
+				"segment_type": "isolation",
+				"run_after": [
+					"Build"
+				],
+				"job_steps": [
+					{
+						"name": "check",
+						"definition": "check",
+						"command": "#!/bin/bash\n\ndload_dir=/app/publish\n\nif [ ! -d \"$dload_dir\" ]; then\n  echo \"$dload_dir does not exist\"\n  exit 1\nelse\n  echo \"$dload_dir exists\"\nfi",
+						"properties": null
+					}
+				],
+				"exit_actions": {},
+				"deployment_strategy": {
+					"canaries": 1,
+					"max_in_flight": 1,
+					"canary_watch_time": "5000-30000",
+					"update_watch_time": "5000-30000",
+					"serial": false
+				},
+				"application_init": {},
+				"instance_tags": [
+					{
+						"name": "application.name",
+						"value": "((application.name))"
+					}
+				],
+				"post_deployment_actions": {
+					"instances": null,
+					"loadbalanced": false,
+					"loadbalancer": {
+						"TargetGroupName": "",
+						"TargetGroupPort": 0,
+						"TargetGroupProtocol": "",
+						"TargetType": "",
+						"VPCID": "",
+						"HealthCheckEnabled": false,
+						"HealthCheckPort": "",
+						"UnhealthyThresholdCount": 0
+					}
+				},
+				"docker_options": {
+					"repository": "((application.name))"
+				},
+				"deployment_target": 1
 			}
 		],
 		"exit_actions": {
