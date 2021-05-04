@@ -17,7 +17,7 @@
 				"publish_attributes": {
 					"publish": true,
 					"docker_attributes": {
-						"repository": "AlexeyApp",
+						"repository": "((application.name))",
 						"tags": [
 							"((application.version))",
 							"latest"
