@@ -24,7 +24,7 @@
 						],
 						"path": "",
 						"context": ".",
-						"docker_file_path": "Test.App\\Dockerfile",
+						"docker_file_path": "Test.App/Dockerfile",
 						"build_args": {
 							"-f": "Test.App\\Dockerfile"
 						}
