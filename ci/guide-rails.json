@@ -17,12 +17,14 @@
 				"publish_attributes": {
 					"publish": true,
 					"docker_attributes": {
-						"repository": "((application.name))",
+						"repository": "AlexeyApp",
 						"tags": [
 							"((application.version))",
 							"latest"
 						],
 						"path": "",
+						"context": ".",
+						"docker_file_path": "Test.App\\Dockerfile",
 						"build_args": {
 							"-f": "Test.App\\Dockerfile"
 						}
@@ -38,18 +40,7 @@
 					}
 				],
 				"post_deployment_actions": {
-					"instances": null,
-					"loadbalanced": false,
-					"loadbalancer": {
-						"TargetGroupName": "",
-						"TargetGroupPort": 0,
-						"TargetGroupProtocol": "",
-						"TargetType": "",
-						"VPCID": "",
-						"HealthCheckEnabled": false,
-						"HealthCheckPort": "",
-						"UnhealthyThresholdCount": 0
-					}
+					"loadbalancer": {}
 				},
 				"source_code_available": true,
 				"tasks": [
@@ -100,18 +91,7 @@
 					}
 				],
 				"post_deployment_actions": {
-					"instances": null,
-					"loadbalanced": false,
-					"loadbalancer": {
-						"TargetGroupName": "",
-						"TargetGroupPort": 0,
-						"TargetGroupProtocol": "",
-						"TargetType": "",
-						"VPCID": "",
-						"HealthCheckEnabled": false,
-						"HealthCheckPort": "",
-						"UnhealthyThresholdCount": 0
-					}
+					"loadbalancer": {}
 				},
 				"docker_options": {
 					"repository": "((application.name))"
