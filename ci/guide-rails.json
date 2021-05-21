@@ -280,7 +280,13 @@
 						}
 					}
 				],
-				"deployment_target": 2
+				"deployment_target": 2,
+				"releases": [
+					{
+						"name": "consul",
+						"version": "latest"
+					}
+				]
 			}
 		],
 		"exit_actions": {
@@ -295,13 +301,7 @@
 		"deployment_files": [],
 		"application_init": {
 			"command": "bin/start-service.sh"
-		},
-		"releases": [
-			{
-				"name": "consul",
-				"version": "latest"
-			}
-		]
+		}
 	},
 	"organization": {
 		"orgname": "GR-Product"
