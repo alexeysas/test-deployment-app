@@ -47,7 +47,7 @@
 							{
 								"name": "env",
 								"definition": "env",
-								"command": "env\n",
+								"command": "env",
 								"properties": null
 							}
 						],
