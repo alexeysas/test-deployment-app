@@ -68,7 +68,7 @@
 					{
 						"name": "check",
 						"definition": "check",
-						"command": "#!/bin/bash\n\ndload_dir=/app/publish\n\nif [ ! -d \"$dload_dir\" ]; then\n  echo \"$dload_dir does not exist\"\n  exit 1\nelse\n  echo \"$dload_dir exists\"\nfi",
+						"command": "exit 0",
 						"properties": null
 					}
 				],
