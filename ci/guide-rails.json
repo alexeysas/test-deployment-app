@@ -280,6 +280,104 @@
 						"alb_ingress_controller_annotations": {
 							"alb.ingress.kubernetes.io/scheme": "internet-facing"
 						}
+					},
+					{
+						"tool_config_alias_id": "4bf92c32-0ed5-4f89-4e6c-5049f8de205a",
+						"name": "tesstt",
+						"cluster_name": "",
+						"namespace": "((application.name))-((application.shortsha))",
+						"replicas": 1,
+						"containers": [
+							{
+								"name": "((application.name))",
+								"image": "hashicorp/http-echo:latest",
+								"ports": [
+									{
+										"name": "test4",
+										"hostPort": 5678,
+										"containerPort": 5678,
+										"protocol": "TCP"
+									}
+								],
+								"resources": {},
+								"imagePullPolicy": "Always",
+								"securityContext": {
+									"privileged": true
+								}
+							}
+						],
+						"autoscaling": {
+							"metadata": {
+								"creationTimestamp": null
+							},
+							"spec": {
+								"scaleTargetRef": {
+									"kind": "",
+									"name": ""
+								},
+								"minReplicas": 1,
+								"maxReplicas": 1,
+								"metrics": [
+									{
+										"type": "Resource",
+										"resource": {
+											"name": "cpu",
+											"target": {
+												"type": "AverageValue",
+												"averageValue": "30"
+											}
+										}
+									},
+									{
+										"type": "Resource",
+										"resource": {
+											"name": "memory",
+											"target": {
+												"type": "AverageValue",
+												"averageValue": "30"
+											}
+										}
+									}
+								]
+							},
+							"status": {
+								"currentReplicas": 0,
+								"desiredReplicas": 0,
+								"currentMetrics": null,
+								"conditions": null
+							}
+						},
+						"ingress_enabled": true,
+						"ingress": {
+							"metadata": {
+								"creationTimestamp": null
+							},
+							"spec": {
+								"rules": [
+									{
+										"host": "((application.name)).calculi.io",
+										"http": {
+											"paths": [
+												{
+													"path": "/",
+													"backend": {
+														"servicePort": 80
+													}
+												}
+											]
+										}
+									}
+								]
+							},
+							"status": {
+								"loadBalancer": {}
+							}
+						},
+						"dns_hosted_zone": "calculi.io",
+						"service_name": "((application.name))-((application.shortsha))",
+						"alb_ingress_controller_annotations": {
+							"alb.ingress.kubernetes.io/scheme": "internet-facing"
+						}
 					}
 				],
 				"deployment_target": 2,
