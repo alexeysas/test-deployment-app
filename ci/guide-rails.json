@@ -195,6 +195,7 @@
 								"image": "hashicorp/http-echo:latest",
 								"ports": [
 									{
+										"name": "test",
 										"hostPort": 5678,
 										"containerPort": 5678,
 										"protocol": "TCP"
