@@ -17,6 +17,7 @@
 				"publish_attributes": {
 					"publish": true,
 					"docker_attributes": {
+						"docker_registry_alias_id": "d6a26dbc-027f-4876-7a83-35166282823c",
 						"repository": "((application.name))",
 						"tags": [
 							"((application.version))",
