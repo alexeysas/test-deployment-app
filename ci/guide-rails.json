@@ -95,7 +95,59 @@
 				"docker_options": {
 					"repository": "((application.name))"
 				},
-				"deployment_target": 1
+				"k8s_instance_groups": [
+					{
+						"tool_config_alias_id": "c29b5819-2d06-4c04-552f-cac50c6689d9",
+						"docker_registry_alias_id": "d6a26dbc-027f-4876-7a83-35166282823c",
+						"name": "((application.name))",
+						"cluster_name": "",
+						"namespace": "((application.name))-((application.shortsha))",
+						"replicas": 1,
+						"containers": [
+							{
+								"name": "((application.name))",
+								"image": "((application.name)):((application.version))",
+								"ports": [
+									{
+										"name": "test",
+										"hostPort": 8080,
+										"containerPort": 8080,
+										"protocol": "TCP"
+									}
+								],
+								"resources": {},
+								"imagePullPolicy": "Always"
+							}
+						],
+						"ingress": {
+							"metadata": {
+								"creationTimestamp": null
+							},
+							"spec": {
+								"rules": [
+									{
+										"http": {
+											"paths": [
+												{
+													"path": "/",
+													"backend": {
+														"servicePort": 0
+													}
+												}
+											]
+										}
+									}
+								]
+							},
+							"status": {
+								"loadBalancer": {}
+							}
+						},
+						"dns_zone_type": "public",
+						"service_name": "((application.name))-((application.shortsha))"
+					}
+				],
+				"deployment_target": 2
 			},
 			{
 				"name": "Integration",
