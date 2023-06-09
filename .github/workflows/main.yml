@@ -7,6 +7,18 @@ jobs:
   example:
     runs-on: ubuntu-latest
     steps:
-    - name: Check string truthiness with OR operator
+    - name: Check string truthiness with OR operator both
       run: echo "At least one string is truthy"
       if: ${{ 'ddd' || 'ddd' }}
+    - name: Check string truthiness with OR operator one empty
+      run: echo "At least one string is truthy"
+      if: ${{ 'ddd' || '' }}
+    - name: Check string truthiness with OR operator one false
+      run: echo "At least one string is truthy"
+      if: ${{ 'ddd' || 'false' }}
+    - name: Check string truthiness with OR operator one 0
+      run: echo "At least one string is truthy"
+      if: ${{ 'ddd' || '0' }}
+    - name: Check string truthiness with OR operator one 1
+      run: echo "At least one string is truthy"
+      if: ${{ 'ddd' || '1' }}
