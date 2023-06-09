@@ -1,0 +1,14 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  example:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check string truthiness with OR operator
+        run: echo "At least one string is truthy: ${{ 'hello' || '' }}"
+
+      - name: Check string truthiness with AND operator
+        run: echo "Both strings are truthy: ${{ 'hello' && 'world' }}"
