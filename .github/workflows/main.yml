@@ -7,30 +7,33 @@ jobs:
   example:
     runs-on: ubuntu-latest
     steps:
-    - name: Check string truthiness with OR operator both
+    - name: Check string truthiness for false || 'ddd'
       run: echo "At least one string is truthy"
       if: ${{ false || 'ddd' }}
-    - name: Check string truthiness with OR operator one empty
+    - name: Check string truthiness for false || ''
       run: echo "At least one string is truthy"
       if: ${{ false || '' }}
-    - name: Check string truthiness with OR operator one boolean false
-      run: echo "At least one string is truthy"
-      if: ${{ false || '' }}
-    - name: Check string truthiness with OR operator one false
+    - name: Check string truthiness for false || 'false'
       run: echo "At least one string is truthy"
       if: ${{ false || 'false' }}
-    - name: Check string truthiness with OR operator one 0
+    - name: Check string truthiness for false || '0'
       run: echo "At least one string is truthy"
       if: ${{ false || '0' }}
-    - name: Check string truthiness with OR operator one 00
+    - name: Check string truthiness for false || 0
+      run: echo "At least one string is truthy"
+      if: ${{ false || 0 }}
+    - name: Check string truthiness for false || 1
+      run: echo "At least one string is truthy"
+      if: ${{ false || 1 }}
+    - name: Check string truthiness for false || '00'
       run: echo "At least one string is truthy"
       if: ${{ false || '00' }}
-    - name: Check string truthiness with OR operator one 1
+    - name: Check string truthiness for false || '1'
       run: echo "At least one string is truthy"
       if: ${{ false || '1' }}
-    - name: Check string truthiness with OR operator false
+    - name: Check string truthiness for false || false 
       run: echo "At least one string is truthy"
       if: ${{ false || false }}
-    - name: Check string truthiness with OR operator false 2
+    - name: Check string truthiness for false || false without expression syntax
       run: echo "At least one string is truthy"
-      if: false
+      if: false || false
