@@ -7,7 +7,7 @@ jobs:
   example:
     runs-on: ubuntu-latest
     steps:
-    - name: Check string truthiness for ${{ false || 'ddd' }}
+    - name: Check string truthiness for ${{ false || '' }}
       run: echo "At least one string is truthy"
       if: ${{ false || 'ddd' }}
     - name: Check string truthiness for false || ''
