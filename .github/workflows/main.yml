@@ -22,3 +22,9 @@ jobs:
     - name: Check string truthiness with OR operator one 1
       run: echo "At least one string is truthy"
       if: ${{ 'ddd' || '1' }}
+    - name: Check string truthiness with OR operator false
+      run: echo "At least one string is truthy"
+      if: ${{ false || false }}
+    - name: Check string truthiness with OR operator false 2
+      run: echo "At least one string is truthy"
+      if: false
