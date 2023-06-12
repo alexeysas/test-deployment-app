@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Operations
+      run: echo "null == null = ${{  null == null }}, null == 6 =  ${{ null == 6 }}, null == 'string' = ${{ null == 'string' }}"
+    - name: Operations
       run: echo "5 > 6 = ${{ 5 > 6 }}, 5 < 6 =  ${{ 5 < 6 }}, 5 < 'dd' = ${{ 5 < 'dd' }}, 5 > 'dd' = ${{ 5 > 'dd' }}"
     - name: Operations 2
       run: echo "'d' > 'dd' = ${{ 'd' > 'dd' }}, 'e' > 'dd' =  ${{ 'e' > 'dd' }}, true < false = ${{ true < false }}, true > true = ${{ true > true }}"
