@@ -16,7 +16,7 @@ jobs:
     - name: Operations null >= something
       run: echo "null >= null = ${{  null >= null }}, null >= 6 =  ${{ null >= 6 }}, null >= 'string' = ${{ null >= 'string' }}"
     - name: Operations equal tricky
-      run: echo "5 == '5' = ${{ 5 == '5'}}, '5.0' == '5'=  ${{ '5.0' == '5' }}"
+      run: echo "5 == '5' = ${{ 5 == '5'}}, '5.0' == '5'=  ${{ '5.0' == '5' }} '5.0' == 5 =  ${{ '5.0' == 5 }}"
 
     - name: Operations
       run: echo "5 > 6 = ${{ 5 > 6 }}, 5 < 6 =  ${{ 5 < 6 }}, 5 < 'dd' = ${{ 5 < 'dd' }}, 5 > 'dd' = ${{ 5 > 'dd' }}"
