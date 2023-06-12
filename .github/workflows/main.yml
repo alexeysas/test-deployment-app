@@ -10,7 +10,9 @@ jobs:
     - name: Operations
       run: echo "5 > 6 = ${{ 5 > 6 }}, 5 < 6 =  ${{ 5 < 6 }}, 5 < 'dd' = ${{ 5 < 'dd' }}, 5 > 'dd' = ${{ 5 > 'dd' }}"
     - name: Operations 2
-      run: echo "'d' > 'dd' = ${{ 'd' > 'dd' }}, 'e' > 'dd' =  ${{ 'e' > 'dd' }}, 5 < 'dd' = ${{ 5 < 'dd' }}, 5 > 'dd' = ${{ 5 > 'dd' }}"
+      run: echo "'d' > 'dd' = ${{ 'd' > 'dd' }}, 'e' > 'dd' =  ${{ 'e' > 'dd' }}, true < false = ${{ true < false }}, true > true = ${{ true > true }}"
+    - name: Operations 3
+      run: echo "true >= true = ${{ true >= true }}, 'e' > 'dd' =  ${{ 'e' > 'dd' }}, true < false = ${{ true < false }}, true > true = ${{ true > true }}"
     - name: Check string truthiness for ${{ false || '' }}
       run: echo "At least one string is truthy"
       if: ${{ false || 'ddd' }}
