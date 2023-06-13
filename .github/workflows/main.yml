@@ -7,6 +7,8 @@ jobs:
   example:
     runs-on: ubuntu-latest
     steps:
+    - name: Operations !
+      run: echo "!null = ${{ !null }}, !6 =  ${{ !6 }}, !'string' = ${{ !'string' }}}, !true = ${{ !true }}"
     - name: Operations nul == something
       run: echo "null == null = ${{  null == null }}, null == 6 =  ${{ null == 6 }}, null == 'string' = ${{ null == 'string' }}"
     - name: Operations nul != something
