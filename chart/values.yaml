@@ -1,0 +1,14 @@
+image:
+  repository: alexeysascsi/test
+  tag: "latest"
+replicaCount: 2
+application:
+  ports:
+    http: 80
+  configuration:
+    environment: "production"
+service:
+  port: 80
+ingress:
+  enabled: false
+  host: test.com

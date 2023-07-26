@@ -1,0 +1,60 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  example:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Operations !
+      run: echo "!null = ${{ !null }}, !6 =  ${{ !6 }}, !'string' = ${{ !'string' }}, !true = ${{ !true }}, !'false' = ${{ !'false' }}"
+    - name: Operations ! 2
+      run: echo " !'false' = ${{ !'false' }},  !0 = ${{ !0 }}"
+    - name: Operations nul == something
+      run: echo "null == null = ${{  null == null }}, null == 6 =  ${{ null == 6 }}, null == 'string' = ${{ null == 'string' }}"
+    - name: Operations nul != something
+      run: echo "null != null = ${{  null != null }}, null != 6 =  ${{ null != 6 }}, null != 'string' = ${{ null != 'string' }}"
+    - name: Operations null > something
+      run: echo "null > null = ${{  null > null }}, null > 6 =  ${{ null > 6 }}, null > 'string' = ${{ null > 'string' }}"
+    - name: Operations null >= something
+      run: echo "null >= null = ${{  null >= null }}, null >= 6 =  ${{ null >= 6 }}, null >= 'string' = ${{ null >= 'string' }}"
+    - name: Operations equal tricky
+      run: echo "5 == '5' = ${{ 5 == '5'}}, '5.0' == '5'=  ${{ '5.0' == '5' }} '5.0' == 5 =  ${{ '5.0' == 5 }}"
+
+    - name: Operations
+      run: echo "5 > 6 = ${{ 5 > 6 }}, 5 < 6 =  ${{ 5 < 6 }}, 5 < 'dd' = ${{ 5 < 'dd' }}, 5 > 'dd' = ${{ 5 > 'dd' }}"
+    - name: Operations 2
+      run: echo "'d' > 'dd' = ${{ 'd' > 'dd' }}, 'e' > 'dd' =  ${{ 'e' > 'dd' }}, true < false = ${{ true < false }}, true > true = ${{ true > true }}"
+    - name: Operations 3
+      run: echo "true >= true = ${{ true >= true }}, false < true =  ${{ false < true }}, true < false = ${{ true < false }}, true > true = ${{ true > true }}"
+    - name: Check string truthiness for ${{ false || '' }}
+      run: echo "At least one string is truthy"
+      if: ${{ false || 'ddd' }}
+    - name: Check string truthiness for false || ''
+      run: echo "At least one string is truthy"
+      if: ${{ false || '' }}
+    - name: Check string truthiness for false || 'false'
+      run: echo "At least one string is truthy"
+      if: ${{ false || 'false' }}
+    - name: Check string truthiness for false || '0'
+      run: echo "At least one string is truthy"
+      if: ${{ false || '0' }}
+    - name: Check string truthiness for false || 0
+      run: echo "At least one string is truthy"
+      if: ${{ false || 0 }}
+    - name: Check string truthiness for false || 1
+      run: echo "At least one string is truthy"
+      if: ${{ false || 1 }}
+    - name: Check string truthiness for false || '00'
+      run: echo "At least one string is truthy"
+      if: ${{ false || '00' }}
+    - name: Check string truthiness for false || '1'
+      run: echo "At least one string is truthy"
+      if: ${{ false || '1' }}
+    - name: Check string truthiness for false || false 
+      run: echo "At least one string is truthy"
+      if: ${{ false || false }}
+    - name: Check string truthiness for false || false without expression syntax
+      run: echo "At least one string is truthy"
+      if: false || false
