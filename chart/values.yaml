@@ -12,3 +12,5 @@ service:
 ingress:
   enabled: false
   host: test.com
+docker:
+  secretName: "docker-secret"

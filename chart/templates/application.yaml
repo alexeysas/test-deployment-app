@@ -30,4 +30,4 @@ spec:
         - name: "ASPNETCORE_ENVIRONMENT"
           value: {{ .Values.application.configuration.environment }}
       imagePullSecrets:
-        - name: acr-secret
+        - name: {{ .Values.docker.secretName }}
