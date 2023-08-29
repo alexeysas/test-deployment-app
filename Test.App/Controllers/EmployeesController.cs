@@ -17,24 +17,25 @@ namespace Test.App.Controllers
         private readonly ILogger<EmployeesController> _logger;
         private readonly CoreContext context;
 
-        public EmployeesController(ILogger<EmployeesController> logger, CoreContext context)
+        public EmployeesController(ILogger<EmployeesController> logger) //, CoreContext context)
         {
             _logger = logger;
-            this.context = context;
+            //this.context = context;
         }
 
         [HttpGet]
         public IEnumerable<Employee> Get()
         {
-            return context.Employees.ToArray();
+            //return context.Employees.ToArray();
+            return new List<Employee>() { new Employee{ FirstName = "test", LastName = "test" } };
         }
 
 
         [HttpPost]
         public IActionResult Add(Employee employee)
         {
-            context.Employees.Add(employee);
-            context.SaveChanges();
+            //context.Employees.Add(employee);
+            //context.SaveChanges();
 
             return Ok();
         }

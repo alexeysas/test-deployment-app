@@ -28,10 +28,10 @@ namespace Test.App
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var connection = $"Host={Configuration["connection:host"]};Database={Configuration["connection:database"]};Username={Configuration["connection:username"]};Password={Configuration["connection:password"]}";
+            //var connection = $"Host={Configuration["connection:host"]};Database={Configuration["connection:database"]};Username={Configuration["connection:username"]};Password={Configuration["connection:password"]}";
 
-            services.AddDbContext<CoreContext>(options =>
-                    options.UseNpgsql(connection));
+            //services.AddDbContext<CoreContext>(options =>
+             //       options.UseNpgsql(connection));
 
             services.AddControllers();
 
@@ -45,10 +45,10 @@ namespace Test.App
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, CoreContext dataContext)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env) //, CoreContext dataContext)
         {
 
-            dataContext.Database.Migrate();
+            //dataContext.Database.Migrate();
 
             if (env.IsDevelopment())
             {
