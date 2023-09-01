@@ -9,10 +9,16 @@ jobs:
     steps:
     - name: Operations 1
       if: 'false'
-      run: echo "{{ 'false' || '500' }}"
-    - name: Operations 1
+      run: echo "${{ 'false' || '100' }}"
+    - name: Operations 2
+      if: "${{ 'false' }}"
+      run: echo "${{ 'false' || '200' }}"
+    - name: Operations 3
+      if: "${{ false }}"
+      run: echo "${{ 'false' || '300' }}"
+    - name: Operations 4
       if: 'true'
-      run: echo "{{ 'false' || '500' }}"
+      run: echo "${{ 'false' || '500' }}"
     - name: Operations ! 2
       if: false
       run: echo " !'false' = ${{ !'false' }},  !0 = ${{ !0 }}"
