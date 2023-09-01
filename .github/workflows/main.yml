@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Operations !
-      if: "false"
+      if: "false "
       run: echo "!null = ${{ !null }}, !6 =  ${{ !6 }}, !'string' = ${{ !'string' }}, !true = ${{ !true }}, !'false' = ${{ !'false' }}"
     - name: Operations ! 2
       if: false
