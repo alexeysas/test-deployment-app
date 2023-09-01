@@ -8,8 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Operations !
+      if: "false"
       run: echo "!null = ${{ !null }}, !6 =  ${{ !6 }}, !'string' = ${{ !'string' }}, !true = ${{ !true }}, !'false' = ${{ !'false' }}"
     - name: Operations ! 2
+      if: false
       run: echo " !'false' = ${{ !'false' }},  !0 = ${{ !0 }}"
     - name: Operations nul == something
       run: echo "null == null = ${{  null == null }}, null == 6 =  ${{ null == 6 }}, null == 'string' = ${{ null == 'string' }}"
