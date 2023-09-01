@@ -7,9 +7,12 @@ jobs:
   example:
     runs-on: ubuntu-latest
     steps:
-    - name: Operations !
+    - name: Operations 1
       if: 'false'
-      run: echo "!null = ${{ !null }}, !6 =  ${{ !6 }}, !'string' = ${{ !'string' }}, !true = ${{ !true }}, !'false' = ${{ !'false' }}"
+      run: echo "{{ 'false' || '500' }}"
+    - name: Operations 1
+      if: 'true'
+      run: echo "{{ 'false' || '500' }}"
     - name: Operations ! 2
       if: false
       run: echo " !'false' = ${{ !'false' }},  !0 = ${{ !0 }}"
