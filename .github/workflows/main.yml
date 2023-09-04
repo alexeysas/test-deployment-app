@@ -10,9 +10,6 @@ jobs:
     - name: Operations 1
       if: 'false'
       run: echo "${{ 'false' || '100' }}"
-    - name: Operations 2
-      if: ${{ 'false and something' }}
-      run: echo "${{ 'false' || '200' }}"
     - name: Operations 3
       if: "${{ false }}"
       run: echo "${{ 'false' || '300' }}"
