@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Operations 1
-      if: 'false'
+      if: 
       run: echo "${{ 'false' || '100' }}"
     - name: Operations 3
       if: "${{ false }}"
