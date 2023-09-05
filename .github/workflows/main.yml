@@ -11,7 +11,8 @@ jobs:
       if: 
       run: echo "${{ 'false' || '100' }}"
     - name: Operations 2
-      if: 'false'
+      if: >- 
+        'false'
       run: echo "${{ 'false' || '100' }}"
     - name: Operations 3
       if: "${{ false }}"
