@@ -15,6 +15,7 @@ jobs:
       run: |
         echo "${{ steps.first.outputs.test_output }}"
         echo "${{ steps.first.outputs.test_output_t }}"
+        echo "${{ steps.notexists.outputs.test_output_t }}"
     - name: Operations 1
       if: 
       run: echo "${{ 'false' || '100' }}"
