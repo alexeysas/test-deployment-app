@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:  
     - name: First1222
-      if: ${{ always() && success() }}
+      if: true
       run: |
         echo first
     - name: First12223
@@ -20,7 +20,7 @@ jobs:
         bad command
     - name: First1
       id: first
-      if: true
+      if: ${{ !always() }}
       run: |
         echo dd
     - name: First2
