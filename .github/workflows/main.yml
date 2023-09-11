@@ -10,7 +10,11 @@ jobs:
     - name: First1222
       if: true
       run: |
-        echo ${{ always() }}
+        echo first
+    - name: First12223
+      if: true
+      run: |
+        echo  ${{ success() }} ${{ failure() }}
     - name: bad
       run: | 
         bad command
@@ -18,11 +22,11 @@ jobs:
       id: first
       if: true
       run: |
-        echo ${{ always() }}
+        echo dd
     - name: First2
       if: ${{ always() }}
       run: |
-        echo hi2 ${{ always() }}
+        echo hi2
     - name: Use Output 
       run: |
         echo "${{ steps.first.outputs.test_output }}"
