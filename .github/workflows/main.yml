@@ -7,6 +7,10 @@ jobs:
   example:
     runs-on: ubuntu-latest
     steps:  
+    - name: First1222
+      if: true
+      run: |
+        echo ${{ always() }}
     - name: bad
       run: | 
         bad command
@@ -14,11 +18,11 @@ jobs:
       id: first
       if: true
       run: |
-        echo hi
+        echo ${{ always() }}
     - name: First2
       if: ${{ always() }}
       run: |
-        echo hi2
+        echo hi2 ${{ always() }}
     - name: Use Output 
       run: |
         echo "${{ steps.first.outputs.test_output }}"
