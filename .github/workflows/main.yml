@@ -6,11 +6,19 @@ on:
 jobs:
   example:
     runs-on: ubuntu-latest
-    steps:    
-    - name: First
+    steps:  
+    - name: bad
+      run: | 
+        bad command
+    - name: First1
       id: first
+      if: true
       run: |
-        echo "test_output=test" >> $GITHUB_OUTPUT
+        echo hi
+    - name: First2
+      if: ${{ always() }}
+      run: |
+        echo hi2
     - name: Use Output 
       run: |
         echo "${{ steps.first.outputs.test_output }}"
