@@ -14,7 +14,7 @@ jobs:
     - name: First12223
       if: true
       run: |
-        echo  ${{ success() }} ${{ failure() }}
+        echo ${{ failure() }}
     - name: bad
       run: | 
         bad command
