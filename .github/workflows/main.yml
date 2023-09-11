@@ -7,6 +7,10 @@ jobs:
   example:
     runs-on: ubuntu-latest
     steps:  
+    - id: foo
+      uses: actions/test-dploymnt-app@v1
+      with:
+        who-to-greet: 'Mona the Octocat'
     - name: First1222
       if: true
       run: |
