@@ -25,7 +25,7 @@ jobs:
         bad command
     - name: First1
       id: first
-      if: ${{ !always() }}
+      if: ${{ !always() || true }}
       run: |
         echo dd
     - name: First2
