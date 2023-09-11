@@ -8,13 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:  
     - name: First1222
-      if: true
+      if: ${{ always() && success() }}
       run: |
         echo first
     - name: First12223
       if: true
       run: |
-        echo ${{ failure() }}
+        echo dsds
     - name: bad
       run: | 
         bad command
