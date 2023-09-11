@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:  
     - id: foo
+      if: false
       uses: alexeysas/test-deployment-app@v1
       with:
         who-to-greet: 'Mona the Octocat'
