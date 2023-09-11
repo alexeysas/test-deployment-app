@@ -15,6 +15,11 @@ jobs:
       if: true
       run: |
         echo dsds
+    - name: First12333
+      id: first22
+      if: ${{ !always() }}
+      run: |
+        echo before bad
     - name: bad
       run: | 
         bad command
