@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:  
     - id: foo
-      uses: actions/test-dploymnt-app@v1
+      uses: alexeysas/test-deployment-app@v1
       with:
         who-to-greet: 'Mona the Octocat'
     - name: First1222
