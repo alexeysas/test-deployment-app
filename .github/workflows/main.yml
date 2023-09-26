@@ -22,7 +22,8 @@ jobs:
         echo first
   example2:
     runs-on: ubuntu-latest
-    if: ${{ always() }}
+    needs:
+      - example
     steps:  
     - name: First1222
       if: true
