@@ -5,10 +5,11 @@ on:
 
 jobs:
   example:
+    if: ${{false}} 
     runs-on: ubuntu-latest
     steps:  
     - id: foo
-      if: false
+      if: ${{ always() }}
       uses: alexeysas/test-deployment-app@v1
       with:
         who-to-greet: 'Mona the Octocat'
