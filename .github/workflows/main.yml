@@ -5,8 +5,16 @@ on:
 
 jobs:
   example:
-    if: ${{false}} 
     runs-on: ubuntu-latest
+    steps:  
+    - id: foo
+      run: |
+        sleep 100000
+  example1:
+    runs-on: ubuntu-latest
+    needs:
+      - example
+    if: ${{ always() }}
     steps:  
     - id: foo
       if: ${{ always() }}
