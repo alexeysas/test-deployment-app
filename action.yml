@@ -1,0 +1,11 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: action
+name: basic
+
+runs:
+  using: composite
+  steps:
+    - id: test
+      uses: docker://alpine:latest
+      run: |
+        echo hi
