@@ -15,4 +15,4 @@ ingress:
 docker:
   secretName: "docker-secret"
 appEnv:
-  REDIS_CONNECTION: "test"
+  REDIS_CONNECTION: test
