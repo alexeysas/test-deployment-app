@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\src\\test\\Test.App\\Test.App\\Test.App.csproj": {}
+    "C:\\data\\csi\\paas\\test-deployment-app\\Test.App\\Test.App.csproj": {}
   },
   "projects": {
-    "C:\\src\\test\\Test.App\\Test.App\\Test.App.csproj": {
+    "C:\\data\\csi\\paas\\test-deployment-app\\Test.App\\Test.App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\src\\test\\Test.App\\Test.App\\Test.App.csproj",
+        "projectUniqueName": "C:\\data\\csi\\paas\\test-deployment-app\\Test.App\\Test.App.csproj",
         "projectName": "Test.App",
-        "projectPath": "C:\\src\\test\\Test.App\\Test.App\\Test.App.csproj",
-        "packagesPath": "C:\\Users\\Mi\\.nuget\\packages\\",
-        "outputPath": "C:\\src\\test\\Test.App\\Test.App\\obj\\",
+        "projectPath": "C:\\data\\csi\\paas\\test-deployment-app\\Test.App\\Test.App.csproj",
+        "packagesPath": "C:\\Users\\AlexeyS\\.nuget\\packages\\",
+        "outputPath": "C:\\data\\csi\\paas\\test-deployment-app\\Test.App\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Mi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\AlexeyS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -25,7 +25,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://clearviewsolutions.pkgs.visualstudio.com/ClickToTrack/_packaging/cvartifacts/nuget/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
@@ -57,6 +58,10 @@
               "target": "Package",
               "version": "[5.0.5, )"
             },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.7.4, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
@@ -68,7 +73,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -80,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

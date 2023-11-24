@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using StackExchange.Redis;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,10 +43,20 @@ namespace Test.App
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Test", Version = "v1" });
              
             });
+
+            services.AddSingleton<IDatabase>(sp =>
+            {
+                var con = Configuration.GetValue<string>("redis:connection");
+                var redis = ConnectionMultiplexer.Connect(con);
+                return redis.GetDatabase(3);
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env) //, CoreContext dataContext)
+        public void Configure(
+            IApplicationBuilder app, 
+            IWebHostEnvironment env) //, CoreContext dataContext)
         {
 
             //dataContext.Database.Migrate();
