@@ -14,3 +14,5 @@ ingress:
   host: test.com
 docker:
   secretName: "docker-secret"
+appEnv:
+  REDIS_CONNECTION: "test"

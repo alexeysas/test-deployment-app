@@ -29,5 +29,9 @@ spec:
         env:
         - name: "ASPNETCORE_ENVIRONMENT"
           value: {{ .Values.application.configuration.environment }}
+          {{- range .Values.appEnv }}
+        - name: {{ .name | quote }}
+          value: {{ .value | quote }}
+          {{- end }}
       imagePullSecrets:
         - name: {{ .Values.docker.secretName }}

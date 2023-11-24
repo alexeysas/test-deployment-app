@@ -11,6 +11,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using StackExchange.Redis;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -44,9 +45,12 @@ namespace Test.App
              
             });
 
+            foreach (DictionaryEntry de in Environment.GetEnvironmentVariables())
+                Console.WriteLine("{0} = {1}", de.Key, de.Value);
+
             services.AddSingleton<IDatabase>(sp =>
             {
-                var con = Configuration.GetValue<string>("redis:connection");
+                var con = Configuration.GetValue<string>("REDIS_CONNECTION");
                 var redis = ConnectionMultiplexer.Connect(con);
                 return redis.GetDatabase(3);
             });
