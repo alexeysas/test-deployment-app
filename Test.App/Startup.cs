@@ -51,6 +51,7 @@ namespace Test.App
             services.AddSingleton<IDatabase>(sp =>
             {
                 var con = Configuration.GetValue<string>("REDIS_CONNECTION");
+                Console.WriteLine(con);
                 var redis = ConnectionMultiplexer.Connect(con);
                 return redis.GetDatabase(3);
             });
