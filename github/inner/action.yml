@@ -1,0 +1,7 @@
+name: 'Inner'
+description: 'Inner'
+runs:
+  using: "composite"
+  steps:
+    - run: echo Inner
+      shell: bash
