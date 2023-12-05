@@ -30,10 +30,11 @@ namespace Test.App
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //var connection = $"Host={Configuration["connection:host"]};Database={Configuration["connection:database"]};Username={Configuration["connection:username"]};Password={Configuration["connection:password"]}";
+            var connection = Configuration.GetValue<string>("POSTGRES_CONNECTION");
+            Console.WriteLine(connection);
 
-            //services.AddDbContext<CoreContext>(options =>
-             //       options.UseNpgsql(connection));
+            services.AddDbContext<CoreContext>(options =>
+                    options.UseNpgsql(connection));
 
             services.AddControllers();
 
