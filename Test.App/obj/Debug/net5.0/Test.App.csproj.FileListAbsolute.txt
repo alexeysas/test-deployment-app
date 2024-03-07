@@ -38,9 +38,10 @@ C:\data\csi\paas\test-deployment-app\Test.App\obj\Debug\net5.0\staticwebassets\m
 C:\data\csi\paas\test-deployment-app\Test.App\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.Test.App.props
 C:\data\csi\paas\test-deployment-app\Test.App\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.Test.App.props
 C:\data\csi\paas\test-deployment-app\Test.App\obj\Debug\net5.0\Test.App.RazorTargetAssemblyInfo.cache
-C:\data\csi\paas\test-deployment-app\Test.App\obj\Debug\net5.0\Test.App.csproj.CopyComplete
 C:\data\csi\paas\test-deployment-app\Test.App\obj\Debug\net5.0\Test.App.dll
 C:\data\csi\paas\test-deployment-app\Test.App\obj\Debug\net5.0\refint\Test.App.dll
 C:\data\csi\paas\test-deployment-app\Test.App\obj\Debug\net5.0\Test.App.pdb
 C:\data\csi\paas\test-deployment-app\Test.App\obj\Debug\net5.0\Test.App.genruntimeconfig.cache
 C:\data\csi\paas\test-deployment-app\Test.App\obj\Debug\net5.0\ref\Test.App.dll
+C:\data\csi\paas\test-deployment-app\Test.App\obj\Debug\net5.0\Test.App.sourcelink.json
+C:\data\csi\paas\test-deployment-app\Test.App\obj\Debug\net5.0\Test.App.csproj.Up2Date

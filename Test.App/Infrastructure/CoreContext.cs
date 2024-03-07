@@ -13,14 +13,14 @@ namespace Cv.Broker.Core.Infrastructure.Data
 
         private IDbContextTransaction _currentTransaction;
 
-        public CoreContext(DbContextOptions<CoreContext> options) : base(options)
+        public CoreContext(DbContextOptions<CoreContext> options) 
+            : base(options)
         {
-     
         }
 
         public bool HasActiveTransaction => _currentTransaction != null;
 
-        public DbSet<Employee> Employees{ get; set; }
+        public DbSet<Property> Properties{ get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -28,7 +28,8 @@ namespace Cv.Broker.Core.Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Employee>().ToTable("employee");
+            modelBuilder.Entity<Property>()
+                .ToTable("property").HasKey(x => x.Name);
         }
 
         public async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default)

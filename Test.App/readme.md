@@ -1,1 +1,0 @@
-kubectl port-forward pod/test-2-75f8c5f8fb-gzjzw -n test-2-dev-develop 24000:80 

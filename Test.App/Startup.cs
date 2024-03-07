@@ -1,20 +1,15 @@
 using Cv.Broker.Core.Infrastructure.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using MongoDB.Driver;
 using StackExchange.Redis;
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Test.App
 {
@@ -31,8 +26,7 @@ namespace Test.App
         public void ConfigureServices(IServiceCollection services)
         {
             var connection = Configuration.GetValue<string>("POSTGRES_CONNECTION");
-            Console.WriteLine(connection);
-
+          
             services.AddDbContext<CoreContext>(options =>
                     options.UseNpgsql(connection));
 
@@ -49,23 +43,32 @@ namespace Test.App
             foreach (DictionaryEntry de in Environment.GetEnvironmentVariables())
                 Console.WriteLine("{0} = {1}", de.Key, de.Value);
 
-            services.AddSingleton<IDatabase>(sp =>
+            // Redis
+            services.AddSingleton(sp =>
             {
                 var con = Configuration.GetValue<string>("REDIS_CONNECTION");
-                Console.WriteLine(con);
                 var redis = ConnectionMultiplexer.Connect(con);
                 return redis.GetDatabase(3);
             });
 
+            // Mongo
+            services.AddSingleton(sp =>
+            {
+                var con = Configuration.GetValue<string>("MONGODB_CONNECTION");
+                var client = new MongoClient(con);
+                return client;
+            });
+ 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(
             IApplicationBuilder app, 
-            IWebHostEnvironment env) //, CoreContext dataContext)
+            IWebHostEnvironment env,
+            CoreContext dataContext)
         {
 
-            //dataContext.Database.Migrate();
+           dataContext.Database.Migrate();
 
             if (env.IsDevelopment())
             {
@@ -74,9 +77,6 @@ namespace Test.App
 
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Test v1"));
-
-
-            //app.UseHttpsRedirection();
 
             app.UseRouting();
 
