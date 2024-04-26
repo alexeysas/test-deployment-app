@@ -23,7 +23,7 @@ runs:
         set -x
         [ '${{ inputs.number == 1 }}' = true ]
         #[ '${{ inputs.number == '1' }}' = true ]
-        [ '${{ inputs.bool == "true" }}' = true ]
+        [ '${{ inputs.bool == 'true' }}' = true ]
         #[ '${{ inputs.bool == 'true' }}' = true ]
       shell: bash
  
