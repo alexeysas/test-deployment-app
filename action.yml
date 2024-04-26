@@ -1,11 +1,29 @@
-apiVersion: automation.cloudbees.io/v1alpha1
-kind: action
-name: basic
-
+name: 'Hello World'
+description: 'Greet someone'
+inputs:
+  number:  
+    description: 'number'
+    required: false
+    default: 1
+  bool:  
+    description: 'bool'
+    required: false
+    default: false
+  string:  
+    description: 'string'
+    required: false
+    default: 'default'
 runs:
-  using: composite
+  using: "composite"
   steps:
-    - id: test
-      uses: docker://alpine:latest
-      run: |
-        echo hi
+    - run: |
+        echo ${{ inputs.number }}
+        echo ${{ inputs.bool }}
+        echo ${{ inputs.string }}
+        set -x
+        [ '${{ inputs.number == 4 }}' = true ]
+        [ '${{ inputs.number == '4' }}' = true ]
+        [ '${{ inputs.bool == true }}' = true ]
+        [ '${{ inputs.bool == 'true' }}' = true ]
+      shell: bash
+ 
