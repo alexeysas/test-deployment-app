@@ -14,7 +14,6 @@ jobs:
           number: 1
           bool: true
           string: "1"
-            types:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
