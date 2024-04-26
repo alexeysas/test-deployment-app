@@ -21,6 +21,7 @@ runs:
         echo ${{ inputs.bool }}
         echo ${{ inputs.string }}
         set -x
+        [ '${{ '1' == 1 }}' = true ]
         [ '${{ inputs.number == 1 }}' = true ]
         #[ '${{ inputs.number == '1' }}' = true ]
         [ '${{ inputs.bool == 'true' }}' = true ]
