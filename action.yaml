@@ -1,12 +1,29 @@
 name: 'Hello World'
 description: 'Greet someone'
+inputs:
+  number:  
+    description: 'number'
+    required: false
+    default: 1
+  bool:  
+    description: 'bool'
+    required: false
+    default: false
+  string:  
+    description: 'string'
+    required: false
+    default: 'default'
 runs:
   using: "composite"
   steps:
-    - run: echo Hello step 1
+    - run: |
+        echo ${{ inputs.number }}
+        echo ${{ inputs.bool }}
+        echo ${{ inputs.string }}
+        set -x
+        [ '${{ inputs.number == 4 }}' = true ]
+        [ '${{ inputs.number == '4' }}' = true ]
+        [ '${{ inputs.bool == true }}' = true ]
+        [ '${{ inputs.bool == 'true' }}' = true ]
       shell: bash
-    - run: echo Hello step 2
-      if: ${{ always() }}
-      shell: bash
-    - run: echo hello step 3
-      shell: bash
+ 
