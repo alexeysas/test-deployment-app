@@ -2,7 +2,8 @@ on:
   push:
     branches:
       - main
-
+    tags:
+      - v1
 jobs:
   types:
     runs-on: ubuntu-latest
