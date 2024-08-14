@@ -3,7 +3,7 @@ on:
     branches:
       - main
     tags:
-      - v1
+      - v2
 jobs:
   types:
     runs-on: ubuntu-latest
