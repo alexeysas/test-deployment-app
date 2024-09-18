@@ -1,6 +1,7 @@
 on:
   push:
     tags:
+      - 'dd'
 jobs:
   types:
     runs-on: ubuntu-latest
