@@ -1,5 +1,6 @@
 on:
   push:
+    tags:
 jobs:
   types:
     runs-on: ubuntu-latest
