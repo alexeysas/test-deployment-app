@@ -5,8 +5,7 @@ kind: Ingress
 metadata:
   name: {{ include "application.fullname" . }}-ingress
   annotations:
-    kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/default-backend: {{ include "application.fullname" . }}
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
     timestamp: {{ now | quote }}
 spec:
   rules:
@@ -20,4 +19,5 @@ spec:
             name: {{ include "application.fullname" . }}
             port:
               number: {{ .Values.service.port }}
+
 {{- end }}

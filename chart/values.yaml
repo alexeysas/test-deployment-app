@@ -10,8 +10,8 @@ application:
 service:
   port: 80
 ingress:
-  enabled: false
-  host: test.com
+  enabled: true
+  host: app1.example.com
 docker:
   secretName: "docker-secret"
 appEnv:
