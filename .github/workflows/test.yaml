@@ -16,7 +16,7 @@ jobs:
       - run: echo "job1 step2 outside"
         shell: bash  
   job3r:
-    needs: [call-workflow-passing-data, job1]
+    needs: [job1r, job2]
     uses: ./.github/workflows/reusable.yaml
     with:
       config-path: .github/labeler.yml
