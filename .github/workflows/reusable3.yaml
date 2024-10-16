@@ -27,9 +27,3 @@ jobs:
         shell: bash
       - run: echo "job2 step2"
         shell: bash
-  job3r:
-    needs: [job2]
-    uses: ./.github/workflows/reusable2.yaml
-    with:
-      config-path: .github/labeler.yml
-    secrets: inherit

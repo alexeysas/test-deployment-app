@@ -15,7 +15,7 @@ jobs:
         shell: bash
       - run: echo "job1 step2 outside"
         shell: bash  
-  call-workflow-passing-data2:
+  job3r:
     needs: [call-workflow-passing-data, job1]
     uses: ./.github/workflows/reusable.yaml
     with:
