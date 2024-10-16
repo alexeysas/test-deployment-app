@@ -6,3 +6,16 @@ jobs:
     with:
       config-path: .github/labeler.yml
     secrets: inherit
+  job1:
+    runs-on: ubuntu-latest
+    name: job1
+    steps:
+      - run: echo "job1 step1 outside"
+        shell: bash
+      - run: echo "job1 step2 outside"
+        shell: bash  
+  call-workflow-passing-data2:
+    uses: ./.github/workflows/reusable.yaml
+    with:
+      config-path: .github/labeler.yml
+    secrets: inherit
