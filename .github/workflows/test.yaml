@@ -1,12 +1,12 @@
 on: [push]
 
 jobs:
-  call-workflow-passing-data:
+  job1r:
     uses: ./.github/workflows/reusable.yaml
     with:
       config-path: .github/labeler.yml
     secrets: inherit
-  job1:
+  job2:
     needs: [call-workflow-passing-data]
     runs-on: ubuntu-latest
     name: job1
