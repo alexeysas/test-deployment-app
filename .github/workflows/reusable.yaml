@@ -1,0 +1,29 @@
+name: Reusable workflow example
+
+on:
+  workflow_call:
+    inputs:
+      config-path:
+        required: false
+        type: string
+    secrets:
+      token:
+        required: false
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    name: job1
+    steps:
+      - run: echo "job1 step1"
+        shell: bash
+      - run: echo "job1 step2"
+        shell: bash
+  job2:
+    runs-on: ubuntu-latest
+    name: job2
+    steps:
+      - run: echo "job2 step1"
+        shell: bash
+      - run: echo "job2 step2"
+        shell: bash
