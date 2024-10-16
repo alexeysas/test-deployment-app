@@ -9,7 +9,6 @@ jobs:
   job2:
     needs: [job1r]
     runs-on: ubuntu-latest
-    name: job1
     steps:
       - run: echo "job1 step1 outside"
         shell: bash
