@@ -2,6 +2,6 @@ on:
   push:
 jobs:
   call-workflow-1-in-local-repo:
-    uses: alexeysas/test-deploymnet-app-go/.github/workflows/env-as-params.yaml@main
+    uses: alexeysas/test-deploymnet-app-go/.github/workflows/env-as-params.yml@main
     with:
       env: staging 
