@@ -4,4 +4,4 @@ jobs:
   call-workflow-1-in-local-repo:
     uses: alexeysas/test-deploymnet-app-go/.github/workflows/test.yaml@main
     with:
-      config-path: ${{ vars.VAR1 }}
+      config-path: ${{ vars.VAR1 }} 
