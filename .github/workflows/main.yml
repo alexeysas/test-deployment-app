@@ -1,6 +1,5 @@
 on:
   push:
-    tags: []
 jobs:
   call-workflow-1-in-local-repo:
     uses: alexeysas/test-deployment-app-go/.github/workflows/test.yaml@main
