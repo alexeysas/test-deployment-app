@@ -2,6 +2,6 @@ on:
   push:
 jobs:
   call-workflow-1-in-local-repo:
-    uses: alexeysas/test-deployment-app-go/.github/workflows/test.yaml@main
+    uses: alexeysas/test-deploymnet-app-go/.github/workflows/test.yaml@main
     with:
       config-path: test
