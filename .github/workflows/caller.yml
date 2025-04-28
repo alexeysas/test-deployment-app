@@ -1,0 +1,7 @@
+on:
+  workflow_dispatch:
+jobs:
+ call-workflow-passing-data:
+    uses: alexeysas/test-deployment-app/.github/workflows/call.yml@main
+    
+   
