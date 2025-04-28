@@ -13,6 +13,7 @@ on:
         description: 'testBoolStr'
         required: true
         type: boolean
+        default: 'true'
       testStrStr:
         description: 'testStrStr'
         required: true
