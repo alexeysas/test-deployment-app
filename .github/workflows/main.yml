@@ -11,13 +11,29 @@ on:
         required: true
         default: true
         type: string
+      testBoolStr:
+        description: 'Log level'
+        required: true
+        default: 'true'
+        type: boolean
+      testStrStr:
+        description: 'Log level'
+        required: true
+        default: 'true'
+        type: string
 jobs:
    test:
       runs-on: ubuntu-latest
       steps:
         - run: |        
-            echo "${{ inputs.test == true }}"
-            echo "${{ inputs.test == 'true' }}"
-            echo "${{ inputs.testStr == true }}"
-            echo "${{ inputs.testStr == 'true' }}"
+            echo "${{ inputs.test == true }}"       # true
+            echo "${{ inputs.test == 'true' }}"     # false
+            echo "${{ inputs.testStr == true }}"    # false
+            echo "${{ inputs.testStr == 'true' }}"  # true
+
+            echo "${{ inputs.testBoolStr == true }}"
+            echo "${{ inputs.testBoolStr == 'true' }}"
+
+            echo "${{ inputs.testStrStr == true }}"
+            echo "${{ inputs.testStrStr == 'true' }}"
           if: inputs.test
