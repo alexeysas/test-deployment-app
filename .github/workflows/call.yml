@@ -9,6 +9,7 @@ on:
         description: 'testStr'
         required: true
         type: string
+        default: true
       testBoolStr:
         description: 'testBoolStr'
         required: true
