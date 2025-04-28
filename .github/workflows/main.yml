@@ -1,7 +1,20 @@
 on:
-  push:
+  workflow_dispatch:
+    inputs:
+      test:
+        description: 'Log level'
+        required: true
+        default: true
+        type: boolean
+      testStr:
+        description: 'Log level'
+        required: true
+        default: true
+        type: string
 jobs:
-  call-workflow-1-in-local-repo:
-    uses: alexeysas/test-deploymnet-app-go/.github/workflows/test.yaml@main
-    with:
-      config-path: ${{ vars.VAR1 }} 
+   test:
+      runs-on: ubuntu-latest
+      steps:
+        - run: |        
+            echo "${{ inputs.test  }}"
+          if: inputs.test
