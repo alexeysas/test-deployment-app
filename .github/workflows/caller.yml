@@ -6,7 +6,7 @@ jobs:
     with:
       test: true
       testStr: true
-      testBoolStr: true
+      testBoolStr: 'true'
       testStrStr: 'true'
     
    
