@@ -3,5 +3,10 @@ on:
 jobs:
  call-workflow-passing-data:
     uses: alexeysas/test-deployment-app/.github/workflows/call.yml@main
+    with:
+      test: true
+      testStr: true
+      testBoolStr: 'true'
+      testStrStr: 'true'
     
    
