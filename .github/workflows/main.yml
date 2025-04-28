@@ -31,9 +31,11 @@ jobs:
             echo "${{ inputs.testStr == true }}"    # false
             echo "${{ inputs.testStr == 'true' }}"  # true
 
-            echo "${{ inputs.testBoolStr == true }}"
-            echo "${{ inputs.testBoolStr == 'true' }}"
+            echo "${{ inputs.testBoolStr == true }}"    # true
+            echo "${{ inputs.testBoolStr == 'true' }}"  # false
 
-            echo "${{ inputs.testStrStr == true }}"
-            echo "${{ inputs.testStrStr == 'true' }}"
+            echo "${{ inputs.testStrStr == true }}"     # false 
+            echo "${{ inputs.testStrStr == 'true' }}"   # true
+
+            echo  "${{ inputs.testBoolStr == inputs.test }}" 
           if: inputs.test
