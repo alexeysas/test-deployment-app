@@ -2,24 +2,20 @@ on:
   workflow_call:
     inputs:
       test:
-        description: 'Log level'
+        description: 'test'
         required: true
-        default: true
         type: boolean
       testStr:
-        description: 'Log level'
+        description: 'testStr'
         required: true
-        default: true
         type: string
       testBoolStr:
-        description: 'Log level'
+        description: 'testBoolStr'
         required: true
-        default: 'true'
         type: boolean
       testStrStr:
-        description: 'Log level'
+        description: 'testStrStr'
         required: true
-        default: 'true'
         type: string
 jobs:
    test:
