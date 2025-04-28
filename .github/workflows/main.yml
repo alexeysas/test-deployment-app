@@ -16,5 +16,8 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - run: |        
-            echo "${{ inputs.test  }}"
+            echo "${{ inputs.test == true }}"
+            echo "${{ inputs.test == 'true' }}"
+            echo "${{ inputs.testStr == true }}"
+            echo "${{ inputs.testStr == 'true' }}"
           if: inputs.test
